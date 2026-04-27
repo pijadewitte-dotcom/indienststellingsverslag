@@ -195,91 +195,20 @@ textarea {
   pointer-events: none;
 }
 
-.report-page {
+.page-shell {
   position: relative;
   width: 100%;
   aspect-ratio: 595.32 / 841.92;
   background: white;
   border-radius: 10px;
-  color: #1d2b38;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(23, 42, 67, 0.08);
 }
 
-.report-page p {
-  margin: 0;
-}
-
-.sheet-header-right {
-  position: absolute;
-  top: 9%;
-  right: 7.8%;
-  display: grid;
-  gap: 0.55%;
-  font-size: 1.34%;
-  line-height: 1.28;
-  text-align: left;
-}
-
-.report-title {
-  position: absolute;
-  top: 16.9%;
-  left: 28.2%;
-  right: 16%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.78%;
-  font-weight: 700;
-}
-
-.info-grid {
-  position: absolute;
-  top: 22.2%;
-  left: 12.5%;
-  right: 11.5%;
-  display: grid;
-  grid-template-columns: 1fr 0.95fr;
-  gap: 8%;
-  font-size: 1.42%;
-  line-height: 2.05;
-}
-
-.report-body {
-  position: absolute;
-  top: 59.4%;
-  left: 14.9%;
-  right: 15.4%;
-  display: grid;
-  gap: 1.8%;
-  font-size: 1.44%;
-  line-height: 1.45;
-}
-
-.bullet {
-  margin-right: 0.45em;
-}
-
-.option-line {
-  padding-left: 5.6%;
-}
-
-.signature-label {
-  margin-left: 34%;
-}
-
-.report-footer {
-  position: absolute;
-  left: 11.9%;
-  bottom: 17.6%;
-  display: grid;
-  gap: 1.1%;
-  font-size: 1.42%;
-}
-
-.footer-signoff {
-  margin-top: 11.5%;
-  display: grid;
-  gap: 0.9%;
+.pdf-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .overlay-field {
@@ -325,7 +254,7 @@ textarea {
 
   .document-stage,
   .document-frame,
-  .report-page {
+  .page-shell {
     width: auto;
     margin: 0;
     padding: 0;
