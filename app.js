@@ -1,3 +1,8 @@
+import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.mjs";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.mjs";
+
 const pageWidth = 595.32;
 const pageHeight = 841.92;
 
@@ -104,7 +109,8 @@ const fields = [
 
 const form = document.querySelector("#field-form");
 const overlay = document.querySelector("#overlay");
-const reportPage = document.querySelector("#report-page");
+const pageShell = document.querySelector("#page-shell");
+const canvas = document.querySelector("#pdf-canvas");
 const statusPill = document.querySelector("#status-pill");
 const printButton = document.querySelector("#print-button");
 const resetButton = document.querySelector("#reset-button");
@@ -114,6 +120,10 @@ const state = Object.fromEntries(
 );
 
 const fieldElements = new Map();
+let renderToken = 0;
+const pdfChunkPaths = Array.from({ length: 11 }, (_, index) =>
+  `./pdf-chunks/chunk-${String(index).padStart(2, "0")}.txt`
+);
 
 function setStatus(message) {
   statusPill.textContent = message;
@@ -214,10 +224,52 @@ function buildUi() {
   });
 }
 
-function renderDocument() {
-  setStatus("Klaar om in te vullen");
-  overlay.style.width = `${reportPage.clientWidth}px`;
-  overlay.style.height = `${reportPage.clientHeight}px`;
+function base64ToUint8Array(base64) {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+
+  return bytes;
+}
+
+async function renderDocument() {
+  const currentToken = ++renderToken;
+  setStatus("Document laden...");
+
+  const chunkTexts = await Promise.all(
+    pdfChunkPaths.map(async (chunkPath) => {
+      const response = await fetch(chunkPath);
+      return response.text();
+    })
+  );
+  const base64 = chunkTexts.join("").trim();
+  const pdfData = base64ToUint8Array(base64);
+  const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+  const page = await pdf.getPage(1);
+
+  if (currentToken !== renderToken) {
+    return;
+  }
+
+  const viewport = page.getViewport({ scale: 2 });
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+
+  await page.render({
+    canvasContext: canvas.getContext("2d"),
+    viewport,
+    annotationMode: pdfjsLib.AnnotationMode.DISABLE,
+  }).promise;
+
+  if (currentToken !== renderToken) {
+    return;
+  }
+
+  overlay.style.width = `${pageShell.clientWidth}px`;
+  overlay.style.height = `${pageShell.clientHeight}px`;
   setStatus("Klaar om in te vullen");
 }
 
@@ -231,9 +283,11 @@ function resetFields() {
 function installEvents() {
   printButton.addEventListener("click", () => window.print());
   resetButton.addEventListener("click", resetFields);
-  window.addEventListener("resize", renderDocument);
+  window.addEventListener("resize", () => {
+    renderDocument().catch(() => setStatus("Laden mislukt"));
+  });
 }
 
 buildUi();
 installEvents();
-renderDocument();
+renderDocument().catch(() => setStatus("Laden mislukt"));
