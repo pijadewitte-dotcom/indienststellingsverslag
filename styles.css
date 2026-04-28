@@ -219,6 +219,12 @@ textarea {
   white-space: pre;
 }
 
+.static-image {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
 .static-text.muted {
   color: #4b5c70;
 }
