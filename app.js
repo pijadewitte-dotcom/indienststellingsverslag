@@ -2,19 +2,19 @@ const pageWidth = 595.32;
 const pageHeight = 841.92;
 
 const fields = [
-  { id: "recipient", label: "Aan", kind: "text", placeholder: "Chevron", rect: [313.5512, 660.0798, 377.8608, 677.8376] },
-  { id: "contact", label: "Contact", kind: "text", placeholder: "Kris", rect: [328.5656, 612.8062, 362.8465, 629.0633] },
+  { id: "recipient", label: "Aan", kind: "text", placeholder: "Power Installation", rect: [316.8033, 663.3309, 395.6288, 674.5865] },
+  { id: "contact", label: "Contact", kind: "text", placeholder: "Dieter", rect: [334.0699, 615.3069, 361.0957, 626.5626] },
   { id: "email", label: "Mail", kind: "email", placeholder: "naam@bedrijf.be", rect: [312.0497, 601.5506, 368.8522, 614.0558] },
   { id: "phone", label: "Tel.", kind: "text", placeholder: "+32 ...", rect: [310.5483, 589.5446, 373.3565, 600.5491] },
   { id: "reference", label: "Ref.", kind: "text", placeholder: "Referentie", rect: [312.8004, 573.7867, 398.1302, 589.2935] },
-  { id: "performedBy", label: "Uitgevoerd", kind: "text", placeholder: "Naam uitvoerder", rect: [129.6251, 573.7867, 202.1926, 589.2935] },
-  { id: "project", label: "Project", kind: "text", placeholder: "Projectnaam", rect: [139.3844, 500.25, 187.929, 515.7568] },
-  { id: "installationType", label: "Type installatie", kind: "text", placeholder: "Adresseerbaar / Bekabeld / DALI", rect: [201.6941, 484.4922, 364.3479, 506.7523] },
+  { id: "performedBy", label: "Uitgevoerd", kind: "text", placeholder: "28-4-2026", rect: [136.6308, 577.0378, 182.4247, 588.2935] },
+  { id: "project", label: "Project", kind: "text", placeholder: "Proximus", rect: [144.138, 501.3457, 185.798, 512.5057] },
+  { id: "installationType", label: "Type installatie", kind: "text", placeholder: "Adresseerbaar / Bekabeld / DALI", rect: [202.6941, 485.4922, 280.7688, 505.7523] },
   { id: "commissioning", label: "Indienststelling", kind: "choice", options: ["Ja", "Nee"], rect: [307.7947, 454.7268, 365.6001, 472.7358] },
   { id: "training", label: "Opleiding", kind: "choice", options: ["Ja", "Nee"], rect: [304.0411, 444.2216, 371.6058, 457.7283] },
   { id: "logbooks", label: "Afdrukken / ophalen logboeken", kind: "choice", options: ["Ja", "Nee"], rect: [307.5454, 429.7148, 375.6087, 445.972] },
-  { id: "date", label: "Datum", kind: "text", placeholder: "dd-mm-jjjj", rect: [141.6366, 400.4503, 194.6855, 418.2081] },
-  { id: "presentContact", label: "Contact aanwezig", kind: "text", placeholder: "Naam aanwezige", rect: [182.9261, 379.4398, 211.2013, 398.6984] },
+  { id: "date", label: "Datum", kind: "text", placeholder: "28-4-2026", rect: [142.6366, 403.7014, 188.4304, 414.957] },
+  { id: "presentContact", label: "Contact aanwezig", kind: "text", placeholder: "Dieter", rect: [186.929, 382.6909, 213.9549, 393.9465] },
   { id: "signature", label: "Handtekening / notitie", kind: "signature", placeholder: "Handtekening of opmerking", rect: [342.8292, 290.1452, 468.6978, 373.1857] },
 ];
 
@@ -38,10 +38,10 @@ const staticTexts = [
   { text: "Tel. : +32 051 800 210 l  Tel. :", x: 74.4, y: 592.44, size: 12 },
   { text: "Uitgevoerd :  l", x: 74.4, y: 579.72, size: 12 },
   { text: "Ref. :", x: 289.08, y: 579.72, size: 12 },
-  { text: "\u2022 Project :", x: 88.8, y: 503.85, size: 13.33, className: "title" },
-  { text: "\u2022 Type installatie :   Adresseerbaar", x: 89.05, y: 492.84, size: 13.33 },
+  { text: "• Project :", x: 88.8, y: 503.85, size: 13.33, className: "title" },
+  { text: "• Type installatie :   Adresseerbaar", x: 89.05, y: 492.84, size: 13.33 },
   { text: "/ Bekabeld / DALI", x: 272.31, y: 492.84, size: 10 },
-  { text: "\u2022", x: 88.8, y: 471.0, size: 12 },
+  { text: "•", x: 88.8, y: 471.0, size: 12 },
   { text: "Uitgevoerde werken :", x: 106.8, y: 471.0, size: 12 },
   { text: "o", x: 124.8, y: 459.43, size: 14.67 },
   { text: "Indienststelling", x: 133.05, y: 459.43, size: 11 },
@@ -51,9 +51,9 @@ const staticTexts = [
   { text: ":   Ja / Nee", x: 181.01, y: 447.32, size: 14.67 },
   { text: "o Afdrukken en/of ophalen logboeken :", x: 124.8, y: 435.2, size: 14.67 },
   { text: "Ja / Nee", x: 319.66, y: 435.2, size: 14.67 },
-  { text: "\u2022", x: 88.8, y: 405.72, size: 12 },
+  { text: "•", x: 88.8, y: 405.72, size: 12 },
   { text: "Datum :", x: 106.8, y: 405.72, size: 12 },
-  { text: "\u2022", x: 90.67, y: 386.01, size: 12 },
+  { text: "•", x: 90.67, y: 386.01, size: 12 },
   { text: "Contact aanwezig :", x: 108.99, y: 386.01, size: 12 },
   { text: "o", x: 353.2, y: 386.01, size: 12 },
   { text: "Handtekening :", x: 365.25, y: 386.01, size: 12 },
@@ -67,16 +67,13 @@ const staticTexts = [
   { text: "www.zemper.be", x: 70.8, y: 158.76, size: 12 },
   { text: "Baronstraat 122 - 8870 IZEGEM - Belgium.", x: 70.8, y: 147.84, size: 12 },
   { text: "1", x: 295.08, y: 48.12, size: 12 },
-  { text: "Omschrijving   :", x: 0, y: 1.9, size: 12 },
-  { text: "Indienststelling-opleiding", x: 76.05, y: 1.9, size: 9, className: "muted" },
-  { text: "adresseerbare noodverlichting ZEMPER", x: 187.41, y: 1.9, size: 9, className: "muted" },
-  { text: "Smart Z", x: 363.79, y: 1.9, size: 9, className: "muted" },
 ];
 
 const staticRules = [
   { left: 72, topY: 698.5, width: 450 },
   { left: 70.8, topY: 173.5, width: 454 },
   { left: 72, topY: 53.5, width: 450 },
+  { left: 71.04, topY: 537.51, width: 410 },
 ];
 
 const staticImages = [
@@ -86,6 +83,13 @@ const staticImages = [
     y: 728.64,
     width: 134.37,
     height: 75.04,
+  },
+  {
+    src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAACDCAIAAABpzCCxAAAbOElEQVR4nO09aXAb13nvvd3FDRAAcfK+70MURUmkZEq+Yzs+4iNx4iYeO86kberMNNOmM5n8SGc6+dPJTDNpmnTSHNa0tmrLTizFceRDsiyJFCXqoEjxBu8TBEgQxLUAdl9ndwEIBCASBAFSdvoJA4F7fvu973vf/RZijMH/Aw9I+O//AQBAbocKOMxTEMK7gZrRPJ4CSp8rvmBZdjunb4sWkKf9XcIU3MMgtGsyApImBMY4BZLxPC98EMZAuMDG14EQpqwNdk5GcBi2fiJYWLC/feLU6upaknyaGqtmlhZ4/cOnNGIsZuG1y/091weYYGbV/w7RAiaaWTZnE/5w2hu4eWNYJlGKxSJOYHhgGCY1WdjgppmlBeRBuL3wWyBHDI02BDwzY7NZl1sPtMhkIsjNHdudJu90052gBUik7ZKaOzAEgJqZmnc6VwuLzACuO2FLk0IyptB29UiSGMQM4x0QCqmM6C1MEFuGx3LMOmNuduRc4bKp6aYNYCf4QoCEu+LP4L8xACz/Ddac7uHBkSP3tkrlYm4vT9vQFbdCiGQOvqvsThimhUAODqbH5v0BX21DBScwEHD/MgaZlZGUQRAClgU93YPVNRVanQpByE+2IHNwV/EFFthB0DAAAI/bNzExs7elkSAJzG+BfzG0ABHRAJzOgGOWSa/XU1FdAnieyDTsoozgOJUqWBzCVswE2K6LPYZcvUwhAZDdgWFDd49ogOhvDJZtjuH+iT0ttSRJQG7ihBCiKMb5XNECcnoBcuYU9+FGPqJQAcbw8qUejEHzvmr+T5TZaXPX9QjG3MfnDhAkIZKEFKogOW5X4ML5rrKyUoVSGmeAfR5lBGM80Df2Hz879t/Hfr9sd4U3cxQZt8zMzi7W7ynnGIdjnwhTwM8nLWxWx4k33zdkF/rc4PzZKywbUqjBANtxoVulVNXUl4YNsEhQ5/Nga2H++/aTYIzdLr/fB/c21/kD9MdnP/a4vQqlFAKwuuIaHZ7c01Sn0ijCoyU4chxR0h5SjHjMuzl3LszbadpnzJcVV5iczrWpiTkBrZvXBhdmrW2H9yHitmgIqGY0top2w9fgALOsy+luP3JQo1XK5SKdTnerbwIAxDBsf9+kOddYWJQTIxCZI4RwZZRy2BInEVZKeJiwkWXAmtNbXlGMECQpXFleOze9EvAHHcve+bmlI/e2ylViyHmrqcCWAqsREu9QLAfHRT0DAXZmepEgCW4/hAARbJDADLhxZcxut9c1lALIgJ2FFGmBk6a6EJuM/BWe/KDX63O5fSRFcsYWgGq1UqFUBP3o07PdRqPBmJPF5QEAkRp6W0UydVq4Xb7OjmuL8yuY5Zg9+u5RBnUIG5ZlaZoOx/hCVjbG2Ouh/YEA4jUDAFipUsqVioUZr2V0smlfjURK8YybosUdCbJmXKeODE/8+pfHTXrT177xVHVDEUIbTWoQQrFYHBfjw34/ACwiCAR5+5MJshKxcmpmRa5W7dlfBrnj+dhNqpBCcDgVvlAqZWUlZYcOHfnze2fnpm2ReFxYWcCY+QIhFDdEMOD3B9mgSEwK57rdHsyiwf5BnU5pMOriWWwHIBVa5OWZsrO12TrVkaOHOi/e8LoDgmcRfuAEzxAZpUicJuAPAIxJEQkgDgagZWRydcU5PDRcV18gCREoVg3fjbQQianahqqp2bHGfRUGo67zQk/QL7BGhAq3J5FEQVruGERChmUJhDCASwvOyxevsjRgWfq+B1rDyv6zwBcAguIys9vtWV5ZbTlQb110XO0aYJmk8A6TBUMMxZQIAMD4wcl3PpKLstxOj16nNpgVXLg75Mp/BmjBGM3qnNz80aEZiQwdufdgf+9Yf+8Y94AhYeEmiHgAYTnCAHh9PjaAIUaDfdPXrwzW1TRYRobq6isSOi87wyNb1iOY+4II4fraio9OdzU2VMrllN6Yc/LtMz4PrdVlQ4IVS5BcpggEA1KZWCSiuKeCmIAEpxcQH8XDUCYVyyj5SO/88Tfevaet1ahX+4OOpgPFACIMWI4zuCKDaBJk1kndEi1whMcxRkyARRAuzM8f+6+TUoVUJJbRQf/Pf/ZaQ0NLUYk5iB0IkWuuNZZl5Ao5SVEYszKZRCZRUJRYLlNJRcqleYYNEMd+92ZhYf7Dj7S987/n8grKjDm8BsFcxCLmvglZOL2psyQrNzBvU4Umdq+HPBDLhxZcxut9c1lALIgJ2FFGmBk6a6EJuM/BWe/KDX63O5fSRFcsYWgGq1UqFUBP3o07PdRqPBmJPF5QEAkRp6W0UydVq4Xb7OjmuL8yuY5Zg9+u5RBnUIG5ZlaZoOx/hCVjbG2Ouh/YEA4jUDAFipUsqVioUZr2V0smlfjURK8YybosUdCbJmXKeODE/8+pfHTXrT177xVHVDEUIbTWoQQrFYHBfjw34/ACwiCAR5+5MJshKxcmpmRa5W7dlfBrnj+dhNqpBCcDgVvlAqZWUlZYcOHfnze2fnpm2ReFxYWcCY+QIhFDdEMOD3B9mgSEwK57rdHsyiwf5BnU5pMOriWWwHIBVa5OWZsrO12TrVkaOHOi/e8LoDgmcRfuAEzxAZpUicJuAPAIxJEQkgDgagZWRydcU5PDRcV18gCREoVg3fjbQQianahqqp2bHGfRUGo67zQk/QL7BGhAq3J5FEQVruGERChmUJhDCASwvOyxevsjRgWfq+B1rDyv6zwBcAguIys9vtWV5ZbTlQb110XO0aYJmk8A6TBUMMxZQIAMD4wcl3PpKLstxOj16nNpgVXLg75Mp/BmjBGM3qnNz80aEZiQwdufdgf+9Yf+8Y94AhYeEmiHgAYTnCAHh9PjaAIUaDfdPXrwzW1TRYRobq6isSOi87wyNb1iOY+4II4fraio9OdzU2VMrllN6Yc/LtMz4PrdVlQ4IVS5BcpggEA1KZWCSiuKeCmIAEpxcQH8XDUCYVyyj5SO/88Tfevaet1ahX+4OOpgPFACIMWI4zuCKDaBJk1kndEi1whMcxRkyARRAuzM8f+6+TUoVUJJbRQf/Pf/ZaQ0NLUYk5iB0IkWuuNZZl5Ao5SVEYszKZRCZRUJRYLlNJRcqleYYNEMd+92ZhYf7Dj7S987/n8grKjDm8BsFcxCLmvglZOL2psyQrNzBvU4Umdq+HPBDLhxZcxut9c1lALIgJ2FFGmBk6a6EJuM/BWe/KDX63O5fSRFcsYWgGq1UqFUBP3o07PdRqPBmJPF5QEAkRp6W0UydVq4Xb7OjmuL8yuY5Zg9+u5RBnUIG5ZlaZoOx/hCVjbG2Ouh/YEA4jUDAFipUsqVioUZr2V0smlfjURK8YybosUdCbJmXKeODE/8+pfHTXrT177xVHVDEUIbTWoQQrFYHBfjw34/ACwiCAR5+5MJshKxcmpmRa5W7dlfBrnj+dhNqpBCcDgVvlAqZWUlZYcOHfnze2fnpm2ReFxYWcCY+QIhFDdEMOD3B9mgSEwK57rdHsyiwf5BnU5pMOriWWwHIBVa5OWZsrO12TrVkaOHOi/e8LoDgmcRfuAEzxAZpUicJuAPAIxJEQkgDgagZWRydcU5PDRcV18gCREoVg3fjbQQianahqqp2bHGfRUGo67zQk/QL7BGhAq3J5FEQVruGERChmUJhDCASwvOyxevsjRgWfq+B1rDyv6zwBcAguIys9vtWV5ZbTlQb110XO0aYJmk8A6TBUMMxZQIAMD4wcl3PpKLstxOj16nNpgVXLg75Mp/BmjBGM3qnNz80aEZiQwdufdgf+9Yf+8Y94AhYeEmiHgAYTnCAHh9PjaAIUaDfdPXrwzW1TRYRobq6isSOi87wyNb1iOY+4II4fraio9OdzU2VMrllN6Yc/LtMz4PrdVlQ4IVS5BcpggEA1KZWCSiuKeCmIAEpxcQH8XDUCYVyyj5SO/88Tfevaet1ahX+4OOpgPFACIMWI4zuCKDaBJk1kndEi1whMcxRkyARRAuzM8f+6+TUoVUJJbRQf/Pf/ZaQ0NLUYk5iB0IkWuuNZZl5Ao5SVEYszKZRCZRUJRYLlNJRcqleYYNEMd+92ZhYf7Dj7S987/n8grKjDm8BsFcxCLmvglZOL2psyQrNzBvU4Umdq+HAA==",
+    x: 168.0,
+    y: 275.04,
+    width: 46.725,
+    height: 69.44,
   },
 ];
 
@@ -162,21 +166,20 @@ function highlightField(id, active) {
 function syncField(id, value, source) {
   state[id] = value;
   const pair = fieldElements.get(id);
-
   if (!pair) {
     return;
   }
-
   if (pair.form !== source) {
     pair.form.value = value;
   }
-
   if (pair.overlay !== source) {
     pair.overlay.value = value;
   }
 }
 
 function buildStaticLayer() {
+  staticLayer.innerHTML = "";
+
   staticTexts.forEach((item) => {
     const node = document.createElement("p");
     node.className = `static-text ${item.className ?? ""}`.trim();
@@ -221,34 +224,25 @@ function syncPageScale() {
 
 function buildUi() {
   buildStaticLayer();
-
   fields.forEach((field) => {
     const wrapper = document.createElement("div");
     wrapper.className = "field-row";
-
     const label = document.createElement("label");
     label.htmlFor = `form-${field.id}`;
     label.textContent = field.label;
-
     const formInput = createInput(field);
     formInput.id = `form-${field.id}`;
-
     const overlayInput = createInput(field, true);
-
     wrapper.append(label, formInput);
     form.append(wrapper);
     overlay.append(overlayInput);
-
     fieldElements.set(field.id, { form: formInput, overlay: overlayInput });
   });
-
   setStatus("Klaar om in te vullen");
 }
 
 function resetFields() {
-  fields.forEach((field) => {
-    syncField(field.id, field.kind === "choice" ? "Ja" : "");
-  });
+  fields.forEach((field) => syncField(field.id, field.kind === "choice" ? "Ja" : ""));
 }
 
 function installEvents() {
